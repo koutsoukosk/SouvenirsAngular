@@ -1,0 +1,6 @@
+@SouvenirsWithAngular_HostAddress = http://localhost:5216
+
+GET {{SouvenirsWithAngular_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
