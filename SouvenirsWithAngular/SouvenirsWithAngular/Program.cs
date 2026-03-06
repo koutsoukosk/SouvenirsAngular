@@ -21,17 +21,19 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.MapScalarApiReference();
 }
-app.UseSpa(spa =>
-{
-    spa.Options.SourcePath = "souvenir.web";
+//app.UseSpa(spa =>
+//{
+//    spa.Options.SourcePath = "souvenir.web";
 
-    if (app.Environment.IsDevelopment())
-    {
-        spa.UseAngularCliServer(npmScript: "start");
-    }
-});
+//    if (app.Environment.IsDevelopment())
+//    {
+//        spa.UseAngularCliServer(npmScript: "start");
+//    }
+//});
 
 app.UseHttpsRedirection();
+//for testing purposes
+app.UseCors(policy=>policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());  
 
 app.UseAuthorization();
 

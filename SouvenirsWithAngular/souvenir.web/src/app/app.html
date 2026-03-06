@@ -1,3 +1,14 @@
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
+
+
+@if(souvenirs$ | async; as souvenirs ){
+<p>{{ souvenirs.length }}</p>
+   @for (souvenir of souvenirs; track souvenir.id) {
+<br />
+<div>
+  <p> {{ souvenir.id }}.  {{ souvenir.souvenirName }} - {{ souvenir.value }}</p> 
+</div>
+  }
+}
+
+
+
