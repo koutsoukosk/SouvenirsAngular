@@ -1,14 +1,34 @@
+<div class="flex h-screen">
+  <div class="w-[50%]">
 
 
-@if(souvenirs$ | async; as souvenirs ){
-<p>{{ souvenirs.length }}</p>
-   @for (souvenir of souvenirs; track souvenir.id) {
-<br />
-<div>
-  <p> {{ souvenir.id }}.  {{ souvenir.souvenirName }} - {{ souvenir.value }}</p> 
+  </div>
+  <div class="overflow-auto w-[50%]">
+    @if(souvenirs$ | async; as souvenirs ){
+   
+    @if(souvenirs.length>0 ){
+    <ul>
+      @for (souvenir of souvenirs; track $index) {
+      <li class="p-2 bg-slate-100 border-b-2 border-slate-200">
+        <span class="font-light text-3xl">
+          {{ souvenir.id }}.  {{ souvenir.souvenirName }} - {{ souvenir.value }}
+        </span>
+
+      </li>
+        
+      }
+    </ul>
+    }
+
+
+
+   
+    }
+  </div>
 </div>
-  }
-}
+
+
+
 
 
 
